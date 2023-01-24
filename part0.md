@@ -1,7 +1,7 @@
 
 ##Excersize 0.4
 
-'''mermaid
+```mermaid
 sequenceDiagram
     participant browser 
     participant server
@@ -29,7 +29,7 @@ sequenceDiagram
     Note right of server: activate server
     server->>browser: HTML document 
     Note right of server: deactivate browser
-'''
+```
 
 
 
