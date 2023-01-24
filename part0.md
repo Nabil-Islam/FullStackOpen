@@ -6,29 +6,29 @@ sequenceDiagram
     participant browser 
     participant server
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    activate server 
+    Note right of server: activate server 
     server->>browser: HTML document 
-    deactivate server
+    Note right of server: deactivate server
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
-    activate server
+    Note right of server: activate server
     server->>browser: HTML document 
-    deactivate browser
+    Note right of server: deactivate browser
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
-    activate server
+    Note right of server: activate server
     server->>browser: CSS document 
-    deactivate browser
+    Note right of server: deactivate browser
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
-    activate server
+    Note right of server: activate server
     server->>browser: JavaScript file 
-    deactivate browser
+    Note right of server: deactivate browser
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
-    activate server
+    Note right of server: activate server
     server->>browser: JSON document 
-    deactivate browser
+    Note right of server: deactivate browser
     browser->>server: GET https://studies.cs.helsinki.fi/favicon.ico
-    activate server
+    Note right of server: activate server
     server->>browser: HTML document 
-    deactivate browser
+    Note right of server: deactivate browser
 '''
 
 
