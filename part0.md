@@ -2,7 +2,6 @@
 ##Excersize 0.4
 
 '''mermaid
-
 sequenceDiagram
     participant browser 
     participant server
