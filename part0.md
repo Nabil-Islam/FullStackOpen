@@ -1,5 +1,5 @@
 
-##Excersize 0.4
+# Excersize 0.4
 
 ```mermaid
 sequenceDiagram
@@ -31,6 +31,17 @@ sequenceDiagram
     Note right of server: deactivate server
 ```
 
+# Excersize 0.5 
+
+```mermaid
+sequenceDiagram
+    participant browser 
+    participant server
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note left of browser: browser uses event handlers to render the new note and sends the new note to the server as a JSON file
+    browser->>browser: JSON file 
+
+```
 
 
 
