@@ -9,7 +9,7 @@ const Part = (props) => {
   console.log(props)
   return (
     <p>
-        {props.part} {props.excersizes}
+        {props.part} {props.excersize}
     </p>
   )
 }
@@ -17,9 +17,9 @@ const Part = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <Part part = {props[0].part} excersize = {props[0].excersize}/>
-      <Part part = {props[1].part} excersize = {props[1].excersize}/>
-      <Part part = {props[2].part} excersize = {props[2].excersize}/>
+      <Part part = {props.parts[0].part} excersize = {props.parts[0].excersize}/>
+      <Part part = {props.parts[1].part} excersize = {props.parts[1].excersize}/>
+      <Part part = {props.parts[2].part} excersize = {props.parts[2].excersize}/>
     </div>
   )
 }
@@ -29,25 +29,40 @@ const Content = (props) => {
 const Total = (props) => {
   console.log(props)
   return (
-    <p> Number of excersizes {props.one+props.two+props.three} </p>
+    <p> Number of excersizes {props.parts[0].excersize + props.parts[1].excersize + props.parts[2].excersize} </p>
   )
 }
 
 
 const App = () => {
-  const course = 'Half Stack application development'
+
+  const contents = {
+
+   course : 'Half Stack application development',
  
-  const stuff = [
-    { part: 'Fundamentals of react', excersize: 10},
-    { part: 'Using props to pass data', excersize: 7},
-    { part: 'State of a component', excersize: 14}
-  ]
+   parts : [
+      {
+        part: 'Fundamentals of react', 
+        excersize: 10
+      },
+
+      {
+        part: 'Using props to pass data', 
+        excersize: 7
+      },
+
+      {
+        part: 'State of a component', 
+        excersize: 14
+      }
+    ]
+}
 
   return (
     <div>
-      <Header course = {course}/>
-      <Content stuff = {stuff}/>
-      <Total one = {stuff[0].excersize} two = {stuff[1].excersize} three = {stuff[2].excersize} />
+      <Header course = {contents.course}/>
+      <Content parts = {contents.parts}/>
+      <Total  parts = {contents.parts}/>
     </div>
   );
 }
