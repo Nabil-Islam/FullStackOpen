@@ -32,12 +32,30 @@ const Statisctic = ({statDic}) => {
   }
   return (
     <div>
-        <p>{statDic[0].name} {statDic[0].number}</p>
-        <p>{statDic[1].name} {statDic[1].number}</p>
-        <p>{statDic[2].name} {statDic[2].number}</p>
-        <p>{statDic[3].name} {statDic[3].number}</p>
-        <p>{statDic[4].name} {statDic[4].number}</p>
-        <p>{statDic[5].name} {statDic[5].number}</p>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>{statDic[0].name}</td> <td>{statDic[0].number}</td>
+        </tr>
+        <tr>
+          <td>{statDic[1].name}</td> <td>{statDic[1].number}</td>
+        </tr>
+        <tr>
+          <td>{statDic[2].name}</td> <td>{statDic[2].number}</td>
+        </tr>
+        <tr>
+          <td>{statDic[3].name}</td> <td>{statDic[3].number}</td>
+        </tr>
+        <tr>
+          <td>{statDic[4].name}</td> <td>{statDic[4].number}</td>
+        </tr>
+        <tr>
+          <td>{statDic[5].name}</td> <td>{statDic[5].number}%</td>
+        </tr>
+      </table>
     </div>    
   )
 }
@@ -58,9 +76,9 @@ const App = () => {
   const neutralT = neutral * 0 
   const badT = bad * -1 
 
-  const averageOfGoodVotes = (goodT + neutralT + badT)/3
+  const averageOfGoodVotes = ((goodT + neutralT + badT)/3).toFixed(1) //Calculates average positive votes to one d.p.
 
-  const positiveVotes = (goodT/totalVotes)
+  const positiveVotes = ((goodT/totalVotes)*100).toFixed(1) //Calculates positive percentage votes to 1 d.p.
 
   const statDic = [
     {name :'good' , number : good},
